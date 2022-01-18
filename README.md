@@ -1,6 +1,6 @@
 # Simple web app on fastApi
 
-## Run
+## Run App
 
 ### Manual
 
@@ -20,4 +20,18 @@ uvicorn app.main:app --reload
 
 ```bash
 uvicorn app.main:app --host 0.0.0.0 --port 8080   
+```
+
+### Docker
+
+#### Docker build
+
+```bash
+docker build -t my_app .
+```
+
+#### Docker run
+
+```bash
+docker run -p 80:80 my_app
 ```

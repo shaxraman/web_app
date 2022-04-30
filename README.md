@@ -13,13 +13,13 @@ pip3 install -r requirements.txt
 #### Run app in test mode with reload
 
 ```bash
-uvicorn app.main:app --reload       
+uvicorn app.main:app --reload
 ```
 
 #### Run app in stage mode with reload
 
 ```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8080   
+uvicorn app.main:app --host 0.0.0.0 --port 8080
 ```
 
 ### Docker

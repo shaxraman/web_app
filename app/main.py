@@ -1,5 +1,7 @@
-from fastapi.responses import HTMLResponse
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+import socket
+
 
 app = FastAPI()
 
@@ -18,6 +20,15 @@ async def read_items():
     """
 
 
+@app.get("/host")
+async def host() -> dict:
+    """ Print hostname and IP v4 address """
+    hostname = socket.gethostname()
+    ipv4 = socket.gethostbyname(socket.gethostname())
+    return {"hostname": hostname, "ipv4": ipv4}
+
+
 @app.get("/health")
 def health_check() -> dict:
+    """ Healthcheck url """
     return {"status": "ok"}

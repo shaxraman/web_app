@@ -4,6 +4,8 @@
 
 replicaCount: 1
 
+args: []
+
 image:
   repository: web_app
   pullPolicy: IfNotPresent
@@ -87,12 +89,12 @@ affinity: {}
 
 env:
   # non sensitive variables
-  public:
-    DATABASE_URL: localhost
-    DATABASE_USER: user
+  public: {}
+    # DATABASE_URL: localhost
+    # DATABASE_USER: user
   # sensitive variables
-  secret:
-    DATABASE_PASSWORD: pa$$w0rd
+  secret: {}
+    # DATABASE_PASSWORD: pa$$w0rd
 
 disableProbes: false
 

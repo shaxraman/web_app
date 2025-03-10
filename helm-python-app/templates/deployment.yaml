@@ -48,14 +48,20 @@ spec:
             httpGet:
               path: {{ .Values.livenessProbe.httpGet.path }}
               port: {{ .Values.livenessProbe.httpGet.port }}
+            failureThreshold: {{ .Values.livenessProbe.failureThreshold }}
             initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+            successThreshold: {{ .Values.livenessProbe.successThreshold }}
+            timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
           readinessProbe:
             httpGet:
               path: {{ .Values.readinessProbe.httpGet.path }}
               port: {{ .Values.readinessProbe.httpGet.port }}
+            failureThreshold: {{ .Values.readinessProbe.failureThreshold }}
             initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+            successThreshold: {{ .Values.readinessProbe.successThreshold }}
+            timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
           {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
